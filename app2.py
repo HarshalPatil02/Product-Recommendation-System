@@ -20,9 +20,19 @@ def set_gradient_background():
             background-color: rgba(255, 255, 255, 0.7);
             color: #111111 !important;
         }
+
+        /* Increase font size of tabs */
+        .css-1d391kg { 
+            font-size: 20px !important;  /* Change this value to adjust the size */
+            font-weight: bold;
+        }
+
+        /* Add styles for headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: white !important;   /* Force all headers to be white */
+        }
         </style>
     """, unsafe_allow_html=True)
-
 # ------------------ Theme & Styling ------------------
 # Call it after set_page_config
 st.set_page_config(page_title="Product Recommendation", layout="wide")
@@ -140,7 +150,6 @@ if uploaded_file is not None:
     tab1, tab2, tab3 = st.tabs(["📊 Visualizations", "🔍 Recommendations", "🏆 Top Products"])
 
     # ---------- Tab 1: Visualizations ----------
-    # ---------- Tab 1: Visualizations ----------
     with tab1:
         st.subheader("📋 Uploaded Data Preview")
         st.dataframe(df.head())
@@ -150,7 +159,7 @@ if uploaded_file is not None:
 
         colA, colB = st.columns([1, 1])
 
-        # Improved Bar Chart
+        #  Bar Chart
         with colA:
             fig_bar, ax_bar = plt.subplots(figsize=(6, 4))
             bars = ax_bar.bar(rating_counts.index.astype(str), rating_counts.values, color="#4c8bf5", edgecolor='black')
@@ -192,7 +201,7 @@ if uploaded_file is not None:
 
             st.pyplot(fig_bar)
 
-        # Improved Pie Chart
+        # Pie Chart
         with colB:
             fig_pie, ax_pie = plt.subplots(figsize=(6, 4))
             colors = sns.color_palette("pastel")[0:len(rating_counts)]
