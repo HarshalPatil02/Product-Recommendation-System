@@ -22,9 +22,14 @@ def set_gradient_background():
         }
 
         /* Increase font size of tabs */
-        .css-1d391kg { 
+        .css-1d391kg span {
             font-size: 20px !important;  /* Change this value to adjust the size */
             font-weight: bold;
+        }
+
+        /* Optional: Add some style to the selected tab */
+        .css-1d391kg[aria-selected="true"] span {
+            color: #1f77b4 !important;  /* Highlight selected tab with a color */
         }
 
         /* Add styles for headings */
