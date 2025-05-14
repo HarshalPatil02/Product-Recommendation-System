@@ -54,6 +54,11 @@ def set_background_image_local(image_path):
             border-radius: 12px;
             padding: 1rem;
         }}
+        
+        /* Add styles for headings */
+        h1, h2, h3, h4, h5, h6 {{
+            color: white !important;   /* Force all headers to be white */
+        }}
         </style>
         """,
         unsafe_allow_html=True
